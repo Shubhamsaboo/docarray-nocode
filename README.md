@@ -1,10 +1,10 @@
-<h2 align="center"> 🕹️ Nocode Interface for DocsArray </h2>
+<h2 align="center"> 🕹️ Nocode Interface for DocArray </h2>
 
 <h3 align="center">🧠 Powered by <ins>Jina AI</ins><sup><a  href="https://jina.ai/"></a></sup> </h3>
 
-DocsArray is a type agnostic Python library for effortless processing and manipulation of data by [Jina AI](https://jina.ai/). It can also be thought of as a single data structure for all kinds of data.
+DocArray is a type agnostic Python library for effortless processing and manipulation of data by [Jina AI](https://jina.ai/). It can also be thought of as a single data structure for all kinds of data.
 
-## 💥 Why DocsArray? 
+## 💥 Why DocArray? 
 
 - Python is all you need to know
 - One-stop solution for all your data processing needs
@@ -44,5 +44,5 @@ streamlit run app.py
 
 ## 📚 Leraning Resources 
 - [Learning Portal](https://learn.jina.ai/) 
-- [DocsArray Docuemtnation](https://docarray.jina.ai/) 
+- [DocArray Docuemtnation](https://docarray.jina.ai/) 
 - [Blog](https://jina.ai/blog/2022-01-13_DocArray/) 

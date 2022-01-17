@@ -2,7 +2,7 @@ import streamlit as st
 from docarray import DocumentArray, Document
 import pandas as pd
 
-st.title("🤖 No Code Interface for DocsArray")
+st.title("🤖 No Code Interface for DocArray")
 
 st.image("docarray-banner.png")
 
@@ -25,7 +25,7 @@ if file is not None:
 
         docs = create_docarray()
 
-        if st.button("Create DocsArray"):
+        if st.button("Create DocArray"):
             # Creating a DocumentArray
             st.write("DocArray created with {} documents".format(len(docs)))
             
