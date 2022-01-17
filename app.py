@@ -20,7 +20,8 @@ if file is not None:
         dataframe = dataframe.loc[:, [meta]]
 
         def create_docarray():
-            docs = DocumentArray.from_csv("data/article_data.csv", field_resolver={meta: "text"})
+            dataframe['text'] = dataframe[meta]
+            docs = DocumentArray.from_dataframe(dataframe)
             return docs
 
         docs = create_docarray()
@@ -39,7 +40,7 @@ if file is not None:
 
         st.subheader("Embed documents via Feature Hashing 🔨")
 
-        dim = st.select_slider('Choose the embedding Dimensions', [64, 128, 256])
+        dim = st.select_slider('Choose the embedding Dimensions', [128, 256, 512])
 
         docs.apply(lambda d: d.embed_feature_hashing(n_dim=dim, fields=('text')))
 
@@ -50,14 +51,14 @@ if file is not None:
         
         query = st.text_input("Enter the query")
         
-        q = (Document(text=query).embed_feature_hashing(n_dim=dim, fields=('text')).match(docs, limit=3, exclude_self=True, metric='jaccard', use_scipy=True))
+        q = (Document(text=query).embed_feature_hashing(n_dim=dim, fields=('text')).match(docs, limit=3, exclude_self=True, metric='cosine', use_scipy=True))
         
         if st.button("Search"):
             st.write('Top 3 matches are:')
             st.write(q.matches[:, ('text')])
 
         st.subheader("Visualize the embeddings 📊")
-        st.info("Clicking this button will stop the application flow and open a new window.")
+        st.info("Clicking this button will stop the application flow and takes you to a new screen.")
         if st.button("Visualize Embeddings"):
             docs.plot_embeddings()
 
